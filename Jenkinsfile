@@ -40,6 +40,29 @@ pipeline {
       }
     }
 
+    stage('Buzz Test') {
+      parallel {
+        stage('Buzz Test') {
+          steps {
+            echo 'added buzz test stage'
+          }
+        }
+
+        stage('Testing a') {
+          steps {
+            echo 'added testinga '
+          }
+        }
+
+        stage('Testing b') {
+          steps {
+            echo 'addeed testing b'
+          }
+        }
+
+      }
+    }
+
   }
   environment {
     BIzz_Name = 'worker bee'

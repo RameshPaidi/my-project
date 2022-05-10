@@ -28,8 +28,12 @@ pipeline {
             }
 
           }
+          environment {
+            BUZZ_NAME = 'java bees'
+          }
           steps {
             echo 'added java 8'
+            sh 'echo I am a $BUZZ_NAME!'
           }
         }
 
